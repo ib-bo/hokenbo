@@ -9,7 +9,7 @@ const styles = theme => ({
   },
 });
 
-class PlusBtn extends React.Component {
+class AddBtn extends React.Component {
   render() {
     const { classes } = this.props;
     return (
@@ -20,9 +20,9 @@ class PlusBtn extends React.Component {
   }
 }
 
-PlusBtn.propTypes = {
+AddBtn.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
 
-export default  withStyles(styles)(PlusBtn);
+export default  withStyles(styles)(AddBtn);

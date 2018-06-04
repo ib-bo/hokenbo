@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import calculator from './calculator';
+import hokenList from './hokenList';
 
 const reducer = combineReducers({
-  calculator,
+  hokenList,
 });
 
 export default reducer;

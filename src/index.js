@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import CalculatorContainer from './containers/CalculatorContainer';
+import HokenListContainer from './containers/HokenListContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
@@ -13,7 +13,7 @@ const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <CalculatorContainer />
+        <HokenListContainer />
     </Provider>,
     document.getElementById('root')
 );

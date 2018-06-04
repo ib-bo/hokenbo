@@ -1,14 +1,14 @@
 import * as actionTypes from '../utils/actionTypes';
 
 const initialAppState = {
-  inputValue: '',           //入力中の値
+  lists: [1,1,1,1,1],           //入力中の値
   resultValue: 0,           //現在までの合計値
   authDot: true,            //.の入力を許容するかの判定(.は1度のみ許容)
   mode: 0,                  //0:default, 1:+, 2:-, 3:*, 4:÷ 
   showingResult: true,      //結果を表示するかの判定
 };
 
-const calculator = (state = initialAppState, action) => {
+const hokenList = (state = initialAppState, action) => {
   if (action.type === actionTypes.INPUT_NUMBER) {
     /*
     * NumBtnが押された場合
@@ -163,4 +163,4 @@ const calculator = (state = initialAppState, action) => {
   }
 };
 
-export default calculator;
+export default hokenList;
