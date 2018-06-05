@@ -9,15 +9,10 @@ import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 
 const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'stretch',
-    overflow: 'hidden',
-  },
   card: {
     marginTop: 16,
     flexWrap: 'nowrap',
+    flex: 1,
   },
   title: {
     marginBottom: 16,
@@ -32,25 +27,19 @@ function List(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
-      {props.lists.map(n => {
-        return(
-          <Card className={classes.card}>
-            <CardContent>
-              <Typography className={classes.title} color="textSecondary">
-                
-              </Typography>
-              <Typography component="p">
-                
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">もっと見る</Button>
-            </CardActions>
-          </Card>
-        )
-      })}
-    </div>
+    <Card className={classes.card}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary">
+          
+        </Typography>
+        <Typography component="p">
+          
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">もっと見る</Button>
+      </CardActions>
+    </Card>
   );
 }
 
