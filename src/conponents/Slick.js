@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Slider from 'react-slick';
 import List from './List';
+import AddBtn from './AddBtn';
 
 class Slick extends React.Component {
   render () {
@@ -13,6 +14,7 @@ class Slick extends React.Component {
             <List />
           );
         })}
+        <AddBtn />        
       </Slider>
     );
   }
