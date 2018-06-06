@@ -11,6 +11,8 @@ import GridList from '@material-ui/core/GridList';
 const styles = {
   card: {
     marginTop: 16,
+    marginLeft: 16,
+    marginRight: 16,
     flexWrap: 'nowrap',
     flex: 1,
   },

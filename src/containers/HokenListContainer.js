@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions';
 
 import List from '../conponents/List';
-import AddBtn from '../conponents/AddBtn';
 import Slick from '../conponents/Slick';
 
 
@@ -16,7 +15,6 @@ class HokenListContainer extends Component {
     return (
       <div>
         <Slick config={hokenList.config} slides={hokenList.slides} list={<List />}/>
-        <AddBtn />
       </div>
     );
   }
