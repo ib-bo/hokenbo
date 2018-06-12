@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 const styles = {
   btn: {
     marginTop: 16,
-    marginLeft: 16,
-    marginRight: 16,
+    marginLeft: 4,
+    marginRight: 4,
     flexWrap: 'nowrap',
     flex: 1,
   },
