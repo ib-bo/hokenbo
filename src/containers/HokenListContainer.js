@@ -6,6 +6,7 @@ import * as actions from '../actions';
 
 import List from '../conponents/List';
 import Slick from '../conponents/Slick';
+import Header from '../conponents/Header';
 
 
 class HokenListContainer extends Component {
@@ -14,6 +15,7 @@ class HokenListContainer extends Component {
 
     return (
       <div>
+        <Header />
         <Slick config={hokenList.config} slides={hokenList.slides} list={<List />}/>
       </div>
     );

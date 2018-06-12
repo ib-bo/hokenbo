@@ -16,7 +16,7 @@ const styles = {
     marginBottom: 16,
     flexWrap: 'nowrap',
     flex: 1,
-    backgroundColor: '#e6e6e6',
+    backgroundColor: '#998d8652',
   },
   title: {
     fontSize: 14,
