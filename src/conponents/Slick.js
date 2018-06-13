@@ -14,6 +14,8 @@ const styles = {
     flexWrap: 'nowrap',
     flex: 1,
   },
+  slider: {
+  },
 };
 
 class Slick extends React.Component {
@@ -24,6 +26,7 @@ class Slick extends React.Component {
         {...this.props.config}
         centerMode
         infinite={false}
+        className={classes.slider}
       >
         {this.props.slides.map(slide => {
           return (

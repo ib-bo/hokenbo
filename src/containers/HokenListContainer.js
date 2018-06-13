@@ -8,6 +8,7 @@ import List from '../conponents/List';
 import Slick from '../conponents/Slick';
 import Header from '../conponents/Header';
 
+import '../HokenList.css';
 
 class HokenListContainer extends Component {
   render() {
@@ -15,8 +16,12 @@ class HokenListContainer extends Component {
 
     return (
       <div>
-        <Header />
-        <Slick config={hokenList.config} slides={hokenList.slides} list={<List />}/>
+        <div className="header">
+          <Header />
+        </div>
+        <div className="hokenList">
+          <Slick config={hokenList.config} slides={hokenList.slides} list={<List />}/>
+        </div>
       </div>
     );
   }
