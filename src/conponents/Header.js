@@ -8,6 +8,7 @@ import Menu from './Menu';
 const styles = theme => ({
   root: theme.mixins.gutters({
     backgroundColor: '#998d8652',
+    marginBottom: 32,
   }),
 });
 
