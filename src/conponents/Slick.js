@@ -31,7 +31,7 @@ class Slick extends React.Component {
         adaptiveHeight
         centerPadding='16px'
         draggable
-        cssEase= 'cubic-bezier(0.19, 1, 0.22, 1)'
+        cssEase= 'cubic-bezier(0,.61,.59,1.28)'
         className={classes.slider}
       >
         {this.props.slides.map(slide => {
