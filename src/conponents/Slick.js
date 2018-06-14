@@ -9,12 +9,14 @@ import Button from '@material-ui/core/Button';
 const styles = {
   btn: {
     marginTop: 16,
-    marginLeft: 4,
-    marginRight: 4,
+    marginLeft: 8,
+    marginRight: 8,
+    marginBottom:'100vh',
     flexWrap: 'nowrap',
     flex: 1,
   },
   slider: {
+    height: '78vh'
   },
 };
 
@@ -28,6 +30,7 @@ class Slick extends React.Component {
         infinite={false}
         adaptiveHeight
         centerPadding='16px'
+        draggable
         className={classes.slider}
       >
         {this.props.slides.map(slide => {

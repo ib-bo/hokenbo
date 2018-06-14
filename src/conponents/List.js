@@ -11,9 +11,9 @@ import GridList from '@material-ui/core/GridList';
 const styles = {
   card: {
     marginTop: 16,
-    marginLeft: 4,
-    marginRight: 4,
-    marginBottom: 16,
+    marginLeft: 8,
+    marginRight: 8,
+    marginBottom:'100vh',
     flexWrap: 'nowrap',
     flex: 1,
     backgroundColor: '#998d8652',
@@ -27,6 +27,12 @@ const styles = {
     marginLeft: 16,
   },
   miniCard: {
+    marginTop: 8,
+    marginBottom: 8,
+    flexWrap: 'nowrap',
+    flex: 1,
+  },
+  btn: {
     marginTop: 8,
     marginBottom: 8,
     flexWrap: 'nowrap',
@@ -81,6 +87,11 @@ function List(props) {
               井藤保険
             </Typography>
           </Card>
+          <Button
+            className={classes.btn}
+          >
+            リストを追加する
+          </Button>  
           
       </CardContent>
     </Card>

@@ -1,8 +1,11 @@
 .header{
-  width: 100%;
+  width: 100vw;
+  height: 10vh;
+  margin-bottom: 5vh;
 }
 
 .hokenList{
-  width: 100%;
+  width: 100vw;
+  height: 85vh;
   overflow: hidden;
 }
