@@ -26,6 +26,8 @@ class Slick extends React.Component {
         {...this.props.config}
         centerMode
         infinite={false}
+        adaptiveHeight
+        centerPadding='16px'
         className={classes.slider}
       >
         {this.props.slides.map(slide => {
