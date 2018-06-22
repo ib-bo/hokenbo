@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import GridList from '@material-ui/core/GridList';
+import { Card, CardContent, Button } from '@material-ui/core';
+import ListCard from './ListCard';
 
 const styles = {
   card: {
@@ -14,8 +10,10 @@ const styles = {
     marginLeft: 8,
     marginRight: 8,
     marginBottom:'100vh',
+    maxHeight:'70vh',
     flexWrap: 'nowrap',
     flex: 1,
+    overflow: 'scroll',
     backgroundColor: '#998d8652',
   },
   title: {
@@ -46,47 +44,8 @@ function List(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-          生命保険
-          <Card className={classes.miniCard}>
-            <Typography className={classes.title} color="textSecondary">
-              主な保証
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              万が一
-            </Typography>
-          </Card>
-          <Card className={classes.miniCard}>
-            <Typography className={classes.title} color="textSecondary">
-              期間
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              2018/04~2020/03
-            </Typography>
-          </Card>
-          <Card className={classes.miniCard}>
-            <Typography className={classes.title} color="textSecondary">
-              証券番号
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              1234567890
-            </Typography>
-          </Card>
-          <Card className={classes.miniCard}>
-            <Typography className={classes.title} color="textSecondary">
-              会社名
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              井藤保険
-            </Typography>
-          </Card>
-          <Card className={classes.miniCard}>
-            <Typography className={classes.title} color="textSecondary">
-              会社名
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              井藤保険
-            </Typography>
-          </Card>
+          保険
+          <ListCard className={classes.miniCard}/>
           <Button
             className={classes.btn}
           >
