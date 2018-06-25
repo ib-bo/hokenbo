@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {PullToRefresh} from "react-js-pull-to-refresh";
+import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 
 import * as actions from '../actions';
 
@@ -11,6 +13,12 @@ import Header from '../conponents/Header';
 import '../HokenList.css';
 
 class HokenListContainer extends Component {
+
+  handleRefresh() {
+    // do some async code here
+    return(true)
+  };
+
   render() {
     const { hokenList, actions } = this.props;
 
@@ -20,14 +28,14 @@ class HokenListContainer extends Component {
           <Header />
         </div>
         <div className="hokenList">
-          <Slick config={hokenList.config} slides={hokenList.slides} list={<List />}/>
+            <Slick config={hokenList.config} slides={hokenList.slides} list={<List handleRefresh={this.handleRefresh}/>}/>
         </div>
       </div>
     );
   }
 }
 
-const mapState = (state, ownProps) => ({
+const mapState = (state) => ({
   hokenList: state.hokenList,
 });
 

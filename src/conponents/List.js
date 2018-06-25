@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Button } from '@material-ui/core';
 import ListCard from './ListCard';
+import {PullToRefresh} from "react-js-pull-to-refresh";
+import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 
 const styles = {
   card: {
@@ -43,6 +45,12 @@ function List(props) {
 
   return (
     <Card className={classes.card}>
+    <PullToRefresh
+  pullDownContent={<PullDownContent />}
+  releaseContent={<ReleaseContent />}
+  refreshContent={<RefreshContent />}
+  pullDownThreshold={200}
+>
       <CardContent>
           保険
           <ListCard className={classes.miniCard}/>
@@ -53,6 +61,7 @@ function List(props) {
           </Button>  
           
       </CardContent>
+      </PullToRefresh>
     </Card>
   );
 }
