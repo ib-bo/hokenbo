@@ -18,6 +18,10 @@ const styles = {
   slider: {
     height: '78vh'
   },
+  dots: {
+    height: '78vh'
+  },
+
 };
 
 class Slick extends React.Component {
@@ -26,11 +30,10 @@ class Slick extends React.Component {
     return (
       <Slider
         {...this.props.config}
-        centerMode
         infinite={false}
         adaptiveHeight
-        centerPadding='16px'
         draggable
+        dots={false}
         className={classes.slider}
       >
         {this.props.slides.map(slide => {

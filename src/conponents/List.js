@@ -7,16 +7,11 @@ import {PullToRefresh} from "react-js-pull-to-refresh";
 import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 
 const styles = {
-  card: {
-    marginTop: 16,
-    marginLeft: 8,
-    marginRight: 8,
-    marginBottom:'100vh',
-    maxHeight:'70vh',
+  scrollArea: {
+    height:'70vh',
     flexWrap: 'nowrap',
     flex: 1,
     overflow: 'scroll',
-    backgroundColor: '#998d8652',
   },
   title: {
     fontSize: 14,
@@ -25,12 +20,6 @@ const styles = {
   text: {
     fontSize: 14,
     marginLeft: 16,
-  },
-  miniCard: {
-    marginTop: 8,
-    marginBottom: 8,
-    flexWrap: 'nowrap',
-    flex: 1,
   },
   btn: {
     marginTop: 8,
@@ -44,25 +33,15 @@ function List(props) {
   const { classes } = props;
 
   return (
-    <Card className={classes.card}>
-    <PullToRefresh
-  pullDownContent={<PullDownContent />}
-  releaseContent={<ReleaseContent />}
-  refreshContent={<RefreshContent />}
-  pullDownThreshold={200}
->
-      <CardContent>
-          保険
-          <ListCard className={classes.miniCard}/>
+          
+    <div className={classes.scrollArea}>保険
+          <ListCard />
           <Button
             className={classes.btn}
           >
             リストを追加する
           </Button>  
-          
-      </CardContent>
-      </PullToRefresh>
-    </Card>
+    </div>
   );
 }
 
