@@ -41,6 +41,7 @@
     "react-js-pull-to-refresh": "^1.0.8",
     "react-pull-to-refresh": "^1.1.2",
     "react-redux": "^5.0.7",
+    "react-swipeable-views": "^0.12.14",
     "redux": "^4.0.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",

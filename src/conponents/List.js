@@ -34,7 +34,7 @@ function List(props) {
 
   return (
           
-    <div className={classes.scrollArea}>保険
+    <div>保険
           <ListCard />
           <Button
             className={classes.btn}
