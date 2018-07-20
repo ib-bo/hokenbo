@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { AppBar, Tabs, Tab, Typography } from '@material-ui/core';
 
-import * as actions from '../actions';
-
-import DataList from '../components/List';
+import DataList from '../containers/List';
 import Header from '../components/Header';
 
 import '../Bo.css';
 
 function TabContainer({ children, dir }) {
     return (
-        <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+        <Typography component="div" dir={dir} style={{ padding: 4 }}>
             {children}
         </Typography>
     );
@@ -28,7 +24,7 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
     root: {
-        marginTop: 90
+        marginTop: 110,
     },
 });
 
@@ -73,7 +69,6 @@ class Bo extends Component {
                             indicatorColor="primary"
                             textColor="primary"
                             fullWidth
-                            centered
                             scrollable
                         >
                             {this.props.list.map(d => {

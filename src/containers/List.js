@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addData } from 'redux'
-import List from '../components/List'
+import { bindActionCreators } from 'redux'
+import { addData } from '../actions/index'
+import DataList from '../components/List'
 
 const mapStateToProps = (state, props) => {
     return {
@@ -15,4 +16,4 @@ const mapDispatchToProps = (dispatch, props) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+export default connect(mapStateToProps, mapDispatchToProps)(DataList)

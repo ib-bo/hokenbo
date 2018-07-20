@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import { Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Menu from './Menu';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
-    backgroundColor: '#15274d',
+    backgroundColor: '#403a3a',
     height: 50
   }),
 });

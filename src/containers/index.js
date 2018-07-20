@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {} from 'redux'
+import { bindActionCreators } from 'redux'
+import {  } from '../actions/index'
 import Bo from '../components/index'
 
 const mapStateToProps = (state, props) => {
