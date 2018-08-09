@@ -2,7 +2,8 @@ import * as CONST from '../utils/ActionTypes'
 import * as DEMO from '../utils/demoData'
 
 const initialState = {
-    list: DEMO.list
+    list: DEMO.list,
+    tableFlg: false
 }
 
 function bo(state = initialState, action) {

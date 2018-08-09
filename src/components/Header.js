@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 import Menu from './Menu';
 
 const styles = theme => ({
@@ -12,19 +10,25 @@ const styles = theme => ({
   }),
 });
 
-function Header(props) {
-  const { classes } = props;
-  return (
-    <div>
-      <Paper className={classes.root} elevation={4}>
-        <Menu />
-      </Paper>
-    </div>
-  );
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.classes = props.classes
+    this.state = {
+    }
+  }
+
+  render() {
+    const { classes, theme } = this.props;
+
+    return (
+      <div>
+        <Paper className={classes.root} elevation={4}>
+          <Menu />
+        </Paper>
+      </div>
+    )
+  }
 }
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Header)
