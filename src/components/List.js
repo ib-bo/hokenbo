@@ -7,7 +7,8 @@ import {
     Typography,
     List,
     ListItem, 
-    Button
+    Button,
+    Avatar
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -24,6 +25,11 @@ const styles = {
         borderRadius: 5,
         marginTop: 4,
         zIndex: 0
+    },
+    bigAvatar: {
+        width: 40,
+        height: 40,
+        margin: 4
     }
 };
 
@@ -58,6 +64,10 @@ class DataList extends React.Component {
                     return (
                         <ExpansionPanel className={classes.expansionPanel}>
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                <Avatar
+                                    className={classes.bigAvatar}
+                                    src='http://www.aeon.jp/sc/ayagawa/shop/store/img/logo/249.gif'
+                                />
                                 <Typography className={classes.heading}>{d.name}</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
@@ -66,12 +76,13 @@ class DataList extends React.Component {
                                     disablePadding
                                     className={classes.list}
                                 >
-                                    {d.item.map(data => {
+                                    {d.item.map((data, index) => {
                                         return (
                                             <ListItem
                                                 dense
                                                 disableGutters
                                                 divider
+                                                key={index}
                                             >
                                                 <p className={classes.title}>{data.title}</p>
                                                 <p className={classes.text}>{data.text}</p>

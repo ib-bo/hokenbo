@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
+import { Paper, Grid } from '@material-ui/core';
 import Menu from './Menu';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
-    backgroundColor: '#403a3a',
+    background: 'linear-gradient(-135deg, #E4A972, #EA6264)',
     height: 50
   }),
 });
@@ -24,7 +24,9 @@ class Header extends Component {
     return (
       <div>
         <Paper className={classes.root} elevation={4}>
-          <Menu />
+          <Grid container>
+            <Menu />
+          </Grid>
         </Paper>
       </div>
     )

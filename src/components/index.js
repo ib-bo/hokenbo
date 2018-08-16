@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { AppBar, Tabs, Tab, Typography, IconButton } from '@material-ui/core';
 import { DesktopWindows, Smartphone } from '@material-ui/icons';
-import TableExamplePadded from './Table'
+import DataTable from './Table'
 
 import DataList from '../containers/List';
 import Header from '../components/Header';
@@ -118,7 +118,9 @@ class Bo extends Component {
             return (
               <TabContainer dir={theme.direction}>
                 {this.state.tableFlg ?
-                  <TableExamplePadded />
+                  <DataTable
+                    dataList={d.data}
+                  />
                   :
                   <DataList
                     dataList={d.data}
