@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { Table, TableBody, TableCell, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -17,6 +12,15 @@ const CustomTableCell = withStyles(theme => ({
     fontSize: 14,
   },
 }))(TableCell);
+
+const CustomButton = withStyles(theme => ({
+  root: {
+      marginTop: 8,
+      marginBottom: 8,
+      flexWrap: 'nowrap',
+      flex: 1,
+  },
+}))(Button)
 
 const styles = theme => ({
   root: {
@@ -45,36 +49,43 @@ class DataTable extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper className={classes.root}>
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <CustomTableCell></CustomTableCell>
-              {this.props.dataList[1].item.map(data => {
+      <div>
+        <CustomButton
+          onClick={() => this.props.addData(this.props.id)}
+        >
+            リストを追加する
+        </CustomButton>  
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <CustomTableCell></CustomTableCell>
+                {this.props.dataList[1].item.map(data => {
+                  return (
+                    <CustomTableCell numeric>{data.title}</CustomTableCell>
+                  )
+                })}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.props.dataList.map((d, index) => {
                 return (
-                  <CustomTableCell numeric>{data.title}</CustomTableCell>
-                )
+                  <TableRow className={classes.row} key={index}>
+                    <CustomTableCell component="th" scope="row">
+                      {d.name}
+                    </CustomTableCell>
+                    {d.item.map(data => {
+                      return (
+                        <CustomTableCell numeric>{data.text}</CustomTableCell>
+                      )
+                    })}
+                  </TableRow>
+                );
               })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.props.dataList.map((d, index) => {
-              return (
-                <TableRow className={classes.row} key={index}>
-                  <CustomTableCell component="th" scope="row">
-                    {d.name}
-                  </CustomTableCell>
-                  {d.item.map(data => {
-                    return (
-                      <CustomTableCell numeric>{data.text}</CustomTableCell>
-                    )
-                  })}
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Paper>
+            </TableBody>
+          </Table>
+        </Paper>
+      </div>
     )
   }
 }

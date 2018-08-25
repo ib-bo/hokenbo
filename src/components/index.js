@@ -4,8 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { AppBar, Tabs, Tab, Typography, IconButton } from '@material-ui/core';
 import { DesktopWindows, Smartphone } from '@material-ui/icons';
-import DataTable from './Table'
-
+import DataTable from '../containers/Table'
 import DataList from '../containers/List';
 import Header from '../components/Header';
 
@@ -30,7 +29,22 @@ const styles = theme => ({
   },
   tableButton: {
     float: 'right'
-  }
+  },
+  tabsRoot: {
+  },
+  tabsIndicator: {
+    backgroundColor: 'white',
+  },
+  tabRoot: {
+    backgroundColor: '#000000cf',
+    opacity: 1,
+    margin: 0,
+    color: 'white',
+  },
+  tabSelected: {
+    color: '#000000cf',
+    backgroundColor: 'white',
+  },
 });
 
 class Bo extends Component {
@@ -81,14 +95,16 @@ class Bo extends Component {
             <Tabs
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              fullWidth
               scrollable
+              classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
             >
               {this.props.list.map(d => {
                 return (
-                  <Tab label={d.name} />
+                  <Tab
+                    label={d.name}
+                    classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                    disableRipple
+                  />
                 )
               })}
             </Tabs>
@@ -119,11 +135,13 @@ class Bo extends Component {
               <TabContainer dir={theme.direction}>
                 {this.state.tableFlg ?
                   <DataTable
+                    id={d.id}
                     dataList={d.data}
                   />
                   :
                   <DataList
                     dataList={d.data}
+                    id={d.id}
                   />
                 }
               </TabContainer>

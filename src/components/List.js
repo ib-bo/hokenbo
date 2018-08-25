@@ -52,11 +52,10 @@ class DataList extends React.Component {
 
     render() {
         const { classes } = this.props;
-
         return (
             <div>
                 <CustomButton
-                    onClick={this.props.addData}
+                    onClick={() => this.props.addData(this.props.id)}
                 >
                     リストを追加する
                 </CustomButton>  

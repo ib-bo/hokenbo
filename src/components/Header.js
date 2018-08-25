@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
-    background: 'linear-gradient(-135deg, #E4A972, #EA6264)',
+    background: '#000000cf',
     height: 50
   }),
 });

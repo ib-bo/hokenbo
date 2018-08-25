@@ -81,7 +81,7 @@ export const  list = [
         ]
     },
     {
-        id: 1,
+        id: 2,
         name: 'お薬',
         data: [
             {
